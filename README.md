@@ -12,17 +12,23 @@ This repository offers a simple way to run TripoSG in a Docker environment.
 ```bash
 git submodule update --init --recursive
 ```
-2. In the `.devcontainer/devcontainer.json` file, update the mounts configuration with your models data root:
+2. Comment the `snapshot_download()` methods to use your local shared models:
+```python
+# snapshot_download(repo_id="VAST-AI/TripoSG", local_dir=triposg_weights_dir)
+# snapshot_download(repo_id="briaai/RMBG-1.4", local_dir=rmbg_weights_dir)
+# snapshot_download(repo_id="VAST-AI/TripoSG-scribble", local_dir=triposg_scribble_weights_dir)
+```
+3. In the `.devcontainer/devcontainer.json` file, update the mounts configuration with your models data root:
 ```json
 "mounts": [
-  "source=${localEnv:HOME}/Path/To/My/Models,target=/models,type=bind,readonly"
+  "source=${localEnv:HOME}/Path/To/My/Models,target=/home/vscode/TripoSG/pretrained_weights,type=bind,readonly"
 ]
 ```
-3. Build the devcontainer and then run the following command inside it to finish the setup:
+4. Build the devcontainer and then run the following command inside it to finish the setup:
 ```bash
 pip install diso --no-build-isolation
 ```
-4. Navigate to TripoSG and run the demo generation:
+5. Navigate to TripoSG and run the demo generation:
 ```bash
 cd TripoSG && python -m scripts.inference_triposg --image-input assets/example_data/hjswed.png --output-path ./output.glb
 ```
