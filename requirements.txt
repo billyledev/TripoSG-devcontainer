@@ -1,0 +1,15 @@
+diffusers
+transformers
+einops
+huggingface_hub
+opencv-python
+trimesh
+omegaconf
+scikit-image
+numpy==1.22.3
+peft
+jaxtyping
+typeguard
+torchvision
+# diso # Needs to be installed manually
+pymeshlab # Added for face reduction
