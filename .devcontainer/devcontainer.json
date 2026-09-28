@@ -19,7 +19,9 @@
       ]
     }
   },
+  "workspaceMount": "source=${localWorkspaceFolder},target=/home/vscode,type=bind",
+  "workspaceFolder": "/home/vscode",
   "mounts": [
-    "source=${localEnv:HOME}/Documents/AI/Models,target=/models,type=bind,readonly"
+    "source=${localEnv:HOME}/Documents/AI/Models,target=/home/vscode/TripoSG/pretrained_weights,type=bind,readonly"
   ]
 }
