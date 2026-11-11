@@ -24,11 +24,7 @@ git submodule update --init --recursive
   "source=${localEnv:HOME}/Path/To/My/Models,target=/home/vscode/TripoSG/pretrained_weights,type=bind,readonly"
 ]
 ```
-4. Build the devcontainer and then run the following command inside it to finish the setup:
-```bash
-pip install diso --no-build-isolation
-```
-5. Navigate to TripoSG and run the demo generation:
+4. Navigate to TripoSG and run the demo generation:
 ```bash
 cd TripoSG && python -m scripts.inference_triposg --image-input assets/example_data/hjswed.png --output-path ./output.glb
 ```

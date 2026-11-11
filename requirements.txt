@@ -11,5 +11,4 @@ peft
 jaxtyping
 typeguard
 torchvision
-# diso # Needs to be installed manually
 pymeshlab # Added for face reduction

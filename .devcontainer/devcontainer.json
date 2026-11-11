@@ -23,5 +23,6 @@
   "workspaceFolder": "/home/vscode",
   "mounts": [
     "source=${localEnv:HOME}/Documents/AI/Models,target=/home/vscode/TripoSG/pretrained_weights,type=bind,readonly"
-  ]
+  ],
+  "postCreateCommand": "pip install diso --no-build-isolation"
 }

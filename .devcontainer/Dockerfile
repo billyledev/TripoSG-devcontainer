@@ -1,5 +1,7 @@
 FROM pytorch/pytorch:2.14.0-cuda13.0-cudnn9-devel
 
+SHELL ["/bin/bash", "-lc"]
+
 ARG USERNAME="vscode"
 ARG DEVELOPER_HOME="/home/${USERNAME}"
 
@@ -21,21 +23,18 @@ RUN wget https://repo.anaconda.com/archive/Anaconda3-2026.07-1-Linux-x86_64.sh -
   find /opt/conda/ -follow -type f -name '*.js.map' -delete && \
   /opt/conda/bin/conda clean -afy
 
+ENV PATH=/opt/conda/envs/tripoSG/bin:$PATH
+
 # Init conda and create environment
-RUN . ~/.bashrc && \
-  conda init --all && \
+RUN conda init --all && \
   conda config --set plugins.auto_accept_tos yes && \
   conda config --set auto_activate_base false && \
   conda create -n tripoSG python=3.10 && \
   echo "conda activate tripoSG" >> ~/.bashrc
 
 # Update pip
-RUN . ~/.bashrc && \
-  python -m pip install -q --upgrade pip
+RUN python -m pip install -q --upgrade pip
 
 # Install requirements
 COPY ./requirements.txt ${DEVELOPER_HOME}/workspace/
-RUN . ~/.bashrc && \
-  pip install -q -r ${DEVELOPER_HOME}/workspace/requirements.txt
-
-# pip install diso --no-build-isolation
+RUN pip install -q -r ${DEVELOPER_HOME}/workspace/requirements.txt
