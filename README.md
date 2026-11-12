@@ -28,3 +28,68 @@ git submodule update --init --recursive
 ```bash
 cd TripoSG && python -m scripts.inference_triposg --image-input assets/example_data/hjswed.png --output-path ./output.glb
 ```
+
+## Building and running the image manually
+```bash
+docker build . -t triposg-devcontainer -f .devcontainer/Dockerfile
+docker run -it --name triposg --gpus all --mount type=bind,src=.,dst=/home/vscode --mount type=bind,src=$HOME/Path/To/My/Models,dst=/home/vscode/TripoSG/pretrained_weights,ro triposg-devcontainer
+pip install diso --no-build-isolation
+cd /home/vscode/TripoSG && python -m scripts.inference_triposg --image-input assets/example_data/hjswed.png --output-path ./output.glb
+```
+
+## Performance comparison
+You can get the total elapsed time of a 3D model generation using the following command:
+
+```bash
+time python -m scripts.inference_triposg --image-input assets/example_data/hjswed.png --output-path ./output.glb
+```
+
+I've benchmarked this project on multiple graphic cards and put the results in the following table. The total time corresponds to the "real" time value outputted from the `time` command.
+
+### assets/example_data/hjswed.png
+| Card          | Time      |
+|---------------|-----------|
+| RTX 3060 12GB | 1m17.856s |
+| RTX 4070m 8GB |           |
+
+### assets/example_data/iuvbww.png
+| Card          | Time      |
+|---------------|-----------|
+| RTX 3060 12GB | 1m20.531s |
+| RTX 4070m 8GB |           |
+
+### assets/example_data/jkghed.png
+| Card          | Time      |
+|---------------|-----------|
+| RTX 3060 12GB | 1m24.487s |
+| RTX 4070m 8GB |           |
+
+### assets/example_data/qwvfsd.png
+| Card          | Time      |
+|---------------|-----------|
+| RTX 3060 12GB | 1m34.897s |
+| RTX 4070m 8GB |           |
+
+### assets/example_data/uegvsd.png
+| Card          | Time      |
+|---------------|-----------|
+| RTX 3060 12GB | 1m18.112s |
+| RTX 4070m 8GB |           |
+
+### assets/example_data/uihghj.png
+| Card          | Time      |
+|---------------|-----------|
+| RTX 3060 12GB | 1m5.337s  |
+| RTX 4070m 8GB |           |
+
+### assets/example_data/yuyyuw.png
+| Card          | Time      |
+|---------------|-----------|
+| RTX 3060 12GB | 1m25.479s |
+| RTX 4070m 8GB |           |
+
+### assets/example_data/yywdsd.png
+| Card          | Time      |
+|---------------|-----------|
+| RTX 3060 12GB | 1m3.119s  |
+| RTX 4070m 8GB |           |
