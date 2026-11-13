@@ -50,46 +50,46 @@ I've benchmarked this project on multiple graphic cards and put the results in t
 | Card          | Time      |
 |---------------|-----------|
 | RTX 3060 12GB | 1m17.856s |
-| RTX 4070m 8GB |           |
+| RTX 4070m 8GB | 0m56.743s |
 
 ### assets/example_data/iuvbww.png
 | Card          | Time      |
 |---------------|-----------|
 | RTX 3060 12GB | 1m20.531s |
-| RTX 4070m 8GB |           |
+| RTX 4070m 8GB | 1m0.724s  |
 
 ### assets/example_data/jkghed.png
 | Card          | Time      |
 |---------------|-----------|
 | RTX 3060 12GB | 1m24.487s |
-| RTX 4070m 8GB |           |
+| RTX 4070m 8GB | 1m3.433s  |
 
 ### assets/example_data/qwvfsd.png
 | Card          | Time      |
 |---------------|-----------|
 | RTX 3060 12GB | 1m34.897s |
-| RTX 4070m 8GB |           |
+| RTX 4070m 8GB | OOM       |
 
 ### assets/example_data/uegvsd.png
 | Card          | Time      |
 |---------------|-----------|
 | RTX 3060 12GB | 1m18.112s |
-| RTX 4070m 8GB |           |
+| RTX 4070m 8GB | 0m58.096s |
 
 ### assets/example_data/uihghj.png
 | Card          | Time      |
 |---------------|-----------|
 | RTX 3060 12GB | 1m5.337s  |
-| RTX 4070m 8GB |           |
+| RTX 4070m 8GB | 0m49.606s |
 
 ### assets/example_data/yuyyuw.png
 | Card          | Time      |
 |---------------|-----------|
 | RTX 3060 12GB | 1m25.479s |
-| RTX 4070m 8GB |           |
+| RTX 4070m 8GB | 1m3.598s  |
 
 ### assets/example_data/yywdsd.png
 | Card          | Time      |
 |---------------|-----------|
 | RTX 3060 12GB | 1m3.119s  |
-| RTX 4070m 8GB |           |
+| RTX 4070m 8GB | 0m47.198s |
